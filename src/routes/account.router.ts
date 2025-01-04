@@ -1,5 +1,11 @@
 import { Router } from "express";
 import accountController from "../controllers/account.controller";
+import { Account } from "../entities/account";
 
-const path = 'account';
-export default Router().get(path, accountController.get);  
+const path = '/account';
+const router = Router();
+router.get(path, accountController.get);
+router.post(path, accountController.post);
+router.put(`${path}/:id`, accountController.update);
+router.delete(`${path}/:id`, accountController.delete);
+export default router; 
