@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.1
+- Add transaction CRUD
 - Add category CRUD
 - Flesh out account CRUD
 - Improve logging

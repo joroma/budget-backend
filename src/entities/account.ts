@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Transaction } from "./transaction";
 
 @Entity()
 export class Account {
@@ -8,7 +9,6 @@ export class Account {
   @Column({ name: 'name', type: 'nvarchar', length: 20 })
   name!: string;
 
-  @Column({ name: 'amount', type: 'decimal', precision: 2 })
-  amount!: number;
-
+  @OneToMany(() => Transaction, (transaction) => transaction.account)
+  transactions?: Transaction[];
 }
