@@ -1,6 +1,5 @@
 import { Router } from "express";
 import accountController from "../controllers/account.controller";
-import { Account } from "../entities/account";
 
 const path = '/account';
 const router = Router();

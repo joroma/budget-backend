@@ -1,11 +1,10 @@
 import { Router } from "express";
-import accountController from "../controllers/account.controller";
-import { Account } from "../entities/account";
+import categoryController from "../controllers/category.controller";
 
-const path = '/account';
+const path = '/category';
 const router = Router();
-router.get(path, accountController.get);
-router.post(path, accountController.post);
-router.put(`${path}/:id`, accountController.update);
-router.delete(`${path}/:id`, accountController.delete);
+router.get(path, categoryController.get);
+router.post(path, categoryController.post);
+router.put(`${path}/:id`, categoryController.update);
+router.delete(`${path}/:id`, categoryController.delete);
 export default router; 

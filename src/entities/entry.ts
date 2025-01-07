@@ -3,7 +3,7 @@ import { Category } from "./category";
 import { Account } from "./account";
 
 @Entity()
-export class Transaction {
+export class Entry {
   @PrimaryGeneratedColumn()
   id!: number;
 
@@ -22,11 +22,11 @@ export class Transaction {
   @Column({ type: 'boolean', default: true })
   isCompleted!: boolean;
 
-  @ManyToOne(() => Category, (category) => category.transactions,)
+  @ManyToOne(() => Category, (category) => category.entries,)
   @JoinColumn({ referencedColumnName: 'id', foreignKeyConstraintName: 'fkCategory' })
   category!: Category;
 
-  @ManyToOne(() => Account, (account) => account.transactions,)
+  @ManyToOne(() => Account, (account) => account.entries,)
   @JoinColumn({ referencedColumnName: 'id', foreignKeyConstraintName: 'fkAccount' })
   account!: Account;
 

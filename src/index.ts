@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import { logger } from "./utils/logger";
 import accountRouter from "./routes/account.router";
 import { httpLogger } from "./middlewares/http.logger";
+import categoryRouter from "./routes/category.router";
 
 const app: Express = express();
 
@@ -15,7 +16,10 @@ app.get("/", (req: Request, res: Response) => {
   res.send("budget let's goooo!!!!!");
 });
 
-app.use(accountRouter);
+const myVariable: number = "john roger";
+
+
+app.use(accountRouter, categoryRouter);
 
 app.listen(config.PORT, () => {
   logger.info(

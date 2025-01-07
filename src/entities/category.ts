@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn, } from "typeorm";
-import { Transaction } from "./transaction";
+import { Entry } from "./entry";
 @Entity()
 export class Category {
   @PrimaryGeneratedColumn()
@@ -11,6 +11,6 @@ export class Category {
   @Column({ type: "decimal", precision: 2 })
   amount!: number;
 
-  @OneToMany(() => Transaction, (transaction) => transaction.category)
-  transactions?: Transaction[]
+  @OneToMany(() => Entry, (entry) => entry.category)
+  entries?: Entry[]
 }
