@@ -1,6 +1,8 @@
 # Changelog
 
 ## 0.1
+
+- Overhaul: switched to `pnpm` and removed entities and orm
 - Add entry-type entity
 - Change transaction entity to entry entity to avoid confusion with reserved word
 - Add transaction CRUD
