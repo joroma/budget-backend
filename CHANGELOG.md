@@ -2,6 +2,7 @@
 
 ## 0.1
 
+- feat: Add initial seed
 - Switch to `drizzle` from `typeorm`
 - Overhaul: switched to `pnpm` and removed entities and orm
 - Add entry-type entity
