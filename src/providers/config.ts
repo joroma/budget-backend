@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 import { z } from 'zod';
 
 dotenv.config();
@@ -10,7 +10,9 @@ const envSchema = z.object({
   DB_USERNAME: z.string().min(1),
   DB_PASSWORD: z.string().min(1),
   DB_NAME: z.string().min(1),
-  DB_TYPE: z.enum(['mysql', 'sqlite'])
+  DB_TYPE: z.enum(['mysql', 'sqlite']),
+  // Experimental SQLITE
+  DB_FILE_NAME: z.string(),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
@@ -21,4 +23,3 @@ if (!parsedEnv.success) {
 }
 
 export default parsedEnv.data;
-
