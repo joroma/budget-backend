@@ -2,6 +2,7 @@
 
 ## 0.1
 
+- Switch to `drizzle` from `typeorm`
 - Overhaul: switched to `pnpm` and removed entities and orm
 - Add entry-type entity
 - Change transaction entity to entry entity to avoid confusion with reserved word
