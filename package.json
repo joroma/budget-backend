@@ -8,7 +8,7 @@
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "tsx src/seed.ts",
+    "seed": "tsx src/seed.ts"
   },
   "keywords": [],
   "author": "joroma",
@@ -21,6 +21,7 @@
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.42.0",
     "express": "^4.21.2",
+    "neverthrow": "^8.2.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {

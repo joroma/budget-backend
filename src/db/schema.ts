@@ -7,7 +7,7 @@ export const category = sqliteTable('category', {
     .references(() => categoryGroup.id, {
       onDelete: 'cascade',
     }),
-  name: text().default(''),
+  name: text().notNull().default(''),
   monthlyAmount: real().notNull().default(0),
   goalAMount: real(),
 });
@@ -19,7 +19,7 @@ export const categoryGroup = sqliteTable('category_group', {
 
 export const account = sqliteTable('account', {
   id: int().primaryKey({ autoIncrement: true }),
-  name: text().default(''),
+  name: text().notNull().default(''),
 });
 
 export const transaction = sqliteTable('transaction', {

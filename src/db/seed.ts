@@ -1,6 +1,6 @@
-import { account, category, transaction, categoryGroup } from './db/schema';
-import { db } from './providers/db-config';
-import { logger } from './utils/logger';
+import { account, category, transaction, categoryGroup } from './schema';
+import { db } from '../providers/db-config';
+import { logger } from '../utils/logger';
 
 async function main() {
   logger.warn('Erasing all data in preparation for initial seed');
