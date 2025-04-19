@@ -7,7 +7,6 @@ import {
 } from '../utils/validation/validation-schema';
 import { BadRequestError } from '../exception/exception';
 import { err, ok } from 'neverthrow';
-import { logger } from '../utils/logger';
 
 export const getById = async (
   req: Request,
@@ -38,7 +37,6 @@ export const list = (_req: Request, res: Response, next: NextFunction) => {
 };
 
 export const create = (req: Request, res: Response, next: NextFunction) => {
-  logger.info(req.body);
   const parser = safeZodParse(createAccountSchema);
   const payload = parser(req.body);
   if (payload.isErr()) {
@@ -110,8 +108,8 @@ export const deleteAccount = (
 
   const result = accountService.delete(payload.value);
   result.match(
-    () => {
-      res.status(204).send();
+    (status) => {
+      res.status(status).send();
     },
     (err) => {
       next(err);
