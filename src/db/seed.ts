@@ -1,4 +1,4 @@
-import { account, category, transaction, categoryGroup } from './schema';
+import { account, category, categoryGroup, transaction } from '@/db/schemas';
 import { db } from '../providers/db-config';
 import { logger } from '../utils/logger';
 

@@ -1,0 +1,15 @@
+meta {
+  name: getById
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{localhost}}/category-group/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 7
+}

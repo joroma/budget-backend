@@ -1,0 +1,15 @@
+meta {
+  name: create account
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{localhost}}/account
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {"name": "Test account 1"}
+}

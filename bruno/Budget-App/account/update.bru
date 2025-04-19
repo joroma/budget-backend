@@ -1,0 +1,19 @@
+meta {
+  name: update
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{localhost}}/account/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 12
+}
+
+body:json {
+  {"name": "Test Update Name 3"}
+}

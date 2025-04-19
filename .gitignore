@@ -131,3 +131,6 @@ dist
 
 # local sqlite db
 local.db
+
+# file I do some syntax testing
+test.ts
